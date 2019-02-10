@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
 
 
     tools:context=".MainActivity">
@@ -21,108 +22,121 @@
         android:textSize="18sp"
         android:textStyle="italic" />
 
-    <ImageView
-
-        android:id="@+id/image1"
-        android:layout_width="150sp"
-        android:layout_height="150sp"
-        android:layout_below="@id/tag"
-        android:layout_alignParentLeft="true"
-        android:contentDescription="Doggos love walking"
-        android:src="@drawable/dogleash" />
-
-    <ImageView
-
-        android:id="@+id/image2"
-        android:layout_width="150sp"
-        android:layout_height="150sp"
-        android:layout_below="@id/tag"
-        android:layout_alignParentRight="true"
-        android:contentDescription="Doggos love walking"
-        android:src="@drawable/dog3way" />
-
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tag"
-        android:layout_alignBottom="@id/image1"
-        android:layout_toLeftOf="@id/image2"
-        android:layout_toRightOf="@id/image1"
-        android:text="We Provide Pet walkers for hire which take care of your pet's natural callings!"
-        android:textSize="16sp" />
+        android:weightSum="3">
+
+        <ImageView
+
+            android:id="@+id/image1"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+
+            android:layout_weight="1"
+
+            android:contentDescription="Doggos love walking"
+            android:src="@drawable/dogleash" />
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+
+            android:text="We Provide Pet walkers for hire which take care of your pet's natural callings!"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_alignParentRight="true"
+            android:layout_weight="1"
+            android:contentDescription="3 leash dogs"
+
+            android:src="@drawable/dog3way" />
+
+
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/line1"
         android:layout_width="match_parent"
-        android:layout_height="3sp"
-        android:layout_below="@id/image1"
-        android:background="@color/colorAccent" />
+        android:layout_height="3dp"
+        android:background="@color/colorAccent"
+        android:contentDescription="Line" />
 
     <TextView
         android:id="@+id/services"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/line1"
         android:layout_centerHorizontal="true"
         android:fontFamily="monospace"
+        android:paddingStart="16dp"
         android:text="Our Services:\n*Best in class Walkers\n*Trainers on demand\n*Dedicated customer support\n*first in class unique dog meetings"
         android:textSize="18sp" />
 
     <ImageView
         android:id="@+id/line2"
         android:layout_width="match_parent"
-        android:layout_height="3sp"
-        android:layout_below="@id/services"
-        android:background="@android:color/black" />
+        android:layout_height="3dp"
+        android:background="@android:color/black"
+        android:contentDescription="Line" />
 
     <ImageView
         android:id="@+id/wallpaper"
         android:layout_width="match_parent"
-        android:layout_height="50sp"
-        android:layout_below="@id/line2"
+        android:layout_height="50dp"
+        android:contentDescription="Wallpaper snip"
         android:scaleType="centerCrop"
         android:src="@drawable/wallpaper" />
 
     <ImageView
         android:id="@+id/line3"
         android:layout_width="match_parent"
-        android:layout_height="3sp"
-        android:layout_below="@id/wallpaper"
-        android:background="@android:color/black" />
+        android:layout_height="3dp"
+        android:background="@android:color/black"
+        android:contentDescription="Line" />
 
-    <TextView
-        android:id="@+id/textleft"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/wallpaper"
-        android:paddingLeft="18sp"
-        android:text="Address:\nfirst floor\n#SCO 22,Sec-49C\nChandigarh"
-        android:textSize="18sp" />
+        android:weightSum="2">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/wallpaper"
-        android:layout_alignParentRight="true"
-        android:paddingRight="18sp"
-        android:text="Contact Us:\nAayush Gandhi\n#S+917528994244\nChandigarh"
-        android:id="@+id/textright"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/textleft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingStart="16dp"
+            android:text="Address:\nfirst floor\n#SCO 22,Sec-49C\nChandigarh"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingEnd="16dp"
+            android:text="Contact Us:\nAayush Gandhi\n#S+917528994244\nChandigarh"
+            android:textSize="18sp" />
+    </LinearLayout>
+
     <ImageView
         android:id="@+id/line4"
         android:layout_width="match_parent"
-        android:layout_height="3sp"
-        android:layout_below="@id/textright"
-        android:background="@android:color/black" />
+        android:layout_height="3dp"
+        android:background="@android:color/black"
+        android:contentDescription="Line" />
+
     <ImageView
         android:id="@+id/wallpaper2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/line4"
+        android:contentDescription="fill wallpaper"
         android:scaleType="centerCrop"
         android:src="@drawable/wallpaper" />
 
 
-
-
-</RelativeLayout>
+</LinearLayout>
